@@ -8,10 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Department of Computer Science and AI</p>
-    <p>Bldg 2-7, Room 615</p>
-    <p>Jeonju, Republic of Korea</p>
+  more_info:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -34,6 +31,5 @@ Before joining JBNU, I was a Research Fellow at the Korea Institute for Advanced
 My research focuses on **cryptography**, with emphasis on:
 - **Lattice-based cryptanalysis**: attacks on LWE, NTRU, and related problems
 - **Secure computation**: threshold FHE, multi-party computation, private set operations
-- **Cryptographic multilinear maps and obfuscation**
 
 I am looking for motivated graduate students interested in cryptography. If you are interested, please contact me via email.
