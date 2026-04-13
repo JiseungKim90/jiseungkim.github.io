@@ -26,7 +26,7 @@ latest_posts:
 
 I am an Associate Professor in the Department of Computer Science and Artificial Intelligence at Jeonbuk National University (JBNU).
 I received my Ph.D. in Mathematical Sciences from Seoul National University, advised by [Jung Hee Cheon](http://www.math.snu.ac.kr/~jhcheon/).
-Before joining JBNU, I was a Research Fellow at the Korea Institute for Advanced Study (KIAS), hosted by [Jeong Han Kim](https://www.kias.re.kr/kias/professor/viewMember.do?member_seq=550).
+Before joining JBNU, I was a Research Fellow at the Korea Institute for Advanced Study (KIAS), hosted by [Jeong Han Kim](https://www.kias.re.kr/kias/people/faculty/viewMember.do?memberId=10460&menuNo=408002).
 
 My research focuses on **cryptography**, with emphasis on:
 - **Mathematical cryptanalysis**: attacks on lattice-based and number-theoretic assumptions
