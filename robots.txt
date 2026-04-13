@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jiseungkim-jbnu.github.io/sitemap.xml
+Sitemap: https://jiseungkim.com/sitemap.xml
