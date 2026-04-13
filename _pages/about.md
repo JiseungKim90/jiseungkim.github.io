@@ -29,7 +29,7 @@ I received my Ph.D. in Mathematical Sciences from Seoul National University, adv
 Before joining JBNU, I was a Research Fellow at the Korea Institute for Advanced Study (KIAS).
 
 My research focuses on **cryptography**, with emphasis on:
-- **Lattice-based cryptanalysis**: attacks on LWE, NTRU, and related problems
+- **Mathematical cryptanalysis**: attacks on lattice-based and number-theoretic assumptions
 - **Secure computation**: threshold FHE, multi-party computation, private set operations
 
 I am looking for motivated graduate students interested in cryptography. If you are interested, please contact me via email.
