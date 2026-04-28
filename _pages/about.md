@@ -29,6 +29,7 @@ I received my Ph.D. in Mathematical Sciences from Seoul National University, adv
 Before joining JBNU, I was a Research Fellow at the Korea Institute for Advanced Study (KIAS), hosted by [Jeong Han Kim](https://www.kias.re.kr/kias/people/faculty/viewMember.do?memberId=10460&menuNo=408002).
 
 My research focuses on **cryptography**, with emphasis on:
+
 - **Mathematical cryptanalysis**: attacks on lattice-based and number-theoretic assumptions
 - **Secure computation**: threshold FHE, multi-party computation, private set operations
 
