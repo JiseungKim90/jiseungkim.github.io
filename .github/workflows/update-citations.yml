@@ -7,19 +7,26 @@ on:
     - cron: "0 0 * * 5" # Friday
   workflow_dispatch:
 
+# Required so the default GITHUB_TOKEN may push the refreshed citations file.
+# Without this the token inherits the repository's read-only default and the
+# final `git push` fails with "Permission to ... denied to github-actions[bot]".
+permissions:
+  contents: write
+
 jobs:
   update-citations:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       # See CUSTOMIZE.md for details on how to set up PAT for triggering subsequent workflows
       #        with:
       #          token: ${{ secrets.PAT }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
@@ -49,17 +56,28 @@ jobs:
           set +e
           echo "🚀 Running citation update script (single attempt)..."
           start_time=$(date)
-          timeout 90 python bin/update_scholar_citations.py
+          timeout 300 python bin/update_scholar_citations.py
           status=$?
           end_time=$(date)
+          set -e
           if [ $status -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
             echo "✅ Citation update succeeded (started at $start_time, ended at $end_time)."
             echo "✅ Citation update succeeded." >> $GITHUB_STEP_SUMMARY
           else
-            echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
-            echo "❌ Citation update script failed with exit code $status." >> $GITHUB_STEP_SUMMARY
+            echo "status=failed" >> $GITHUB_OUTPUT
+            if [ $status -eq 124 ]; then
+              reason="timed out after 300s (Google Scholar most likely rate-limited the runner)"
+            else
+              reason="exited with code $status"
+            fi
+            # A fetch killed mid-write can leave a truncated citations.yml behind,
+            # so restore the checked-in copy before anything downstream stages it.
+            git checkout -- _data/citations.yml || true
+            echo "::warning::Citation update script $reason; _data/citations.yml left unchanged."
+            echo "❌ Citation update script $reason (started at $start_time, ended at $end_time)."
+            echo "⚠️ Citation update skipped — script $reason." >> $GITHUB_STEP_SUMMARY
           fi
-          set -e
 
       - name: Save new citations.yml hash
         id: after
@@ -92,10 +110,24 @@ jobs:
           echo "🔧 Git configured."
 
       - name: Commit and push if changed
+        # Only commit when the fetch actually produced fresh data; a failed or
+        # timed-out run must never push whatever happens to be on disk.
+        if: steps.run_citation_update.outputs.status == 'success'
         run: |
           git add _data/citations.yml
-          git diff --staged --quiet || (
-            echo "📤 Committing and pushing changes..."
-            git commit -m "Update Google Scholar citations"
-            git push
-          )
+          if git diff --staged --quiet; then
+            echo "ℹ️ No citation changes to commit."
+            exit 0
+          fi
+          echo "📤 Committing and pushing changes..."
+          git commit -m "Update Google Scholar citations"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "✅ Pushed citation update."
+              exit 0
+            fi
+            echo "⚠️ Push attempt $attempt failed; rebasing onto origin/${GITHUB_REF_NAME} and retrying..."
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+          done
+          echo "::error::Could not push the citation update after 3 attempts."
+          exit 1

@@ -41,6 +41,10 @@ def get_scholar_citations() -> None:
     print(f"Fetching citations for Google Scholar ID: {SCHOLAR_USER_ID}")
     today = datetime.now().strftime("%Y-%m-%d")
 
+    # Stays None when the file is absent or unreadable, so the comparison below
+    # never trips over an unbound name.
+    existing_data = None
+
     # Check if the output file was already updated today
     if os.path.exists(OUTPUT_FILE):
         try:
