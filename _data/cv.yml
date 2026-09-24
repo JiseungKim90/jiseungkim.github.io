@@ -3,7 +3,6 @@ cv:
   label: Associate Professor
   email: jiseungkim@jbnu.ac.kr
   location: Jeonju, Republic of Korea
-  image: ""
   summary: Associate Professor in the Department of Computer Science and Artificial Intelligence at Jeonbuk National University, working on cryptanalysis, lattice-based cryptography, homomorphic encryption and privacy-preserving protocols.
 
   social_networks:
@@ -16,7 +15,10 @@ cv:
     countryCode: KR
 
   sections:
-    Employment:
+    # Rendered by _includes/cv/experience.liquid, which the layout wires to the
+    # section named "Experience"; any other name falls through to the generic
+    # renderer and prints an empty card.
+    Experience:
       - company: Jeonbuk National University (JBNU)
         position: Associate Professor
         location: Jeonju, Republic of Korea
@@ -65,85 +67,89 @@ cv:
         start_date: 2009-03-01
         end_date: 2014-02-28
 
+    # _includes/cv/awards.liquid reads title/date/awarder/summary. The authors
+    # list is what RenderCV needs to accept the entry (it types any entry with a
+    # title as a publication) and is not displayed on the site.
     Awards:
       - title: Research Award
+        authors:
+          - Korea Institute for Advanced Study
         date: 2021-09-01
         awarder: Korea Institute for Advanced Study
 
       - title: Encourage Prize
+        authors:
+          - 2019 National Cryptography Contest, Korea
         date: 2019-11-01
         awarder: 2019 National Cryptography Contest, Korea
         summary: "Cryptanalysis of the FRS obfuscation based on the CLT13 Multilinear Map"
 
       - title: Grand Prize
+        authors:
+          - 2017 National Cryptography Contest, Korea
         date: 2017-11-01
         awarder: 2017 National Cryptography Contest, Korea
         summary: "Cryptanalysis of CRT-ACD problem"
 
       - title: Encourage Prize
+        authors:
+          - 2017 National Cryptography Contest, Korea
         date: 2017-11-01
         awarder: 2017 National Cryptography Contest, Korea
         summary: "Privacy-preserving K-means Clustering with Multiple Data Owners"
 
       - title: Encourage Prize
+        authors:
+          - 2016 National Cryptography Contest, Korea
         date: 2016-11-01
         awarder: 2016 National Cryptography Contest, Korea
         summary: "A Generalization of BGJT Algorithms for Solving the Discrete Logarithm Problem"
 
       - title: Global Ph.D. Fellowship (GPF)
+        authors:
+          - National Research Foundation of Korea
         date: 2015-03-01
         awarder: National Research Foundation of Korea
         summary: Held from March 2015 to November 2017
 
+    # No _includes/cv/talks.liquid exists, so this section reaches the layout's
+    # generic renderer, which prints label/details pairs.
     Talks:
-      - title: Introduction to Algebraic Post-Quantum Cryptography
-        date: 2024-11-01
-        summary: Hanyang Mathematics Colloquium, Seoul, Korea
+      - label: Nov 2024
+        details: "Introduction to Algebraic Post-Quantum Cryptography — Hanyang Mathematics Colloquium, Seoul, Korea"
 
-      - title: "Divide and Prange: Revisiting the Prange's Information Set Decoding for LPN"
-        date: 2023-03-01
-        summary: Cryptography and Algorithm Seminar, Hanyang University, Seoul, Korea
+      - label: Mar 2023
+        details: "Divide and Prange: Revisiting the Prange's Information Set Decoding for LPN — Cryptography and Algorithm Seminar, Hanyang University, Seoul, Korea"
 
-      - title: How to Meet Ternary LWE Keys on Babai's Nearest Plane
-        date: 2022-10-01
-        summary: 2022 Global KMS International Conference
+      - label: Oct 2022
+        details: "How to Meet Ternary LWE Keys on Babai's Nearest Plane — 2022 Global KMS International Conference"
 
-      - title: The Past, Present of the Learning Parity with Noise
-        date: 2020-11-01
-        summary: Cryptography and Algorithm Seminar, Hanyang University, Seoul, Korea
+      - label: Nov 2020
+        details: "The Past, Present of the Learning Parity with Noise — Cryptography and Algorithm Seminar, Hanyang University, Seoul, Korea"
 
-      - title: "Hardness and Concrete Security in Cryptography — Adventures in Crypto Dark Matter: Attacks, Fixes and Analysis for Weak Pseudorandom Function Candidates"
-        date: 2020-06-01
-        summary: Discrete Math Seminar, IBS, Daejeon, Korea
+      - label: Jun 2020
+        details: "Hardness and Concrete Security in Cryptography — Adventures in Crypto Dark Matter: Attacks, Fixes and Analysis for Weak Pseudorandom Function Candidates — Discrete Math Seminar, IBS, Daejeon, Korea"
 
-      - title: Mathematical Analysis of Indistinguishability Obfuscations
-        date: 2020-01-01
-        summary: Crypto Seminar, Ewha Womans University, Seoul, Korea
+      - label: Jan 2020
+        details: "Mathematical Analysis of Indistinguishability Obfuscations — Crypto Seminar, Ewha Womans University, Seoul, Korea"
 
-      - title: Mathematical Analysis of Indistinguishability Obfuscations
-        date: 2020-01-01
-        summary: Cryptography Winter Camp 2020, Gonjiam, Korea
+      - label: Jan 2020
+        details: "Mathematical Analysis of Indistinguishability Obfuscations — Cryptography Winter Camp 2020, Gonjiam, Korea"
 
-      - title: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation"
-        date: 2019-10-01
-        summary: KMS Annual Meeting 2019, Seoul, Korea
+      - label: Oct 2019
+        details: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation — KMS Annual Meeting 2019, Seoul, Korea"
 
-      - title: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation"
-        date: 2019-08-01
-        summary: The 7th Functional Encryption Workshop, Seoul, Korea
+      - label: Aug 2019
+        details: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation — The 7th Functional Encryption Workshop, Seoul, Korea"
 
-      - title: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation"
-        date: 2019-08-01
-        summary: CRYPTO 2019, Santa Barbara, US
+      - label: Aug 2019
+        details: "Statistical Zeroizing Attack: Cryptanalysis of Candidates of BP Obfuscation — CRYPTO 2019, Santa Barbara, US"
 
-      - title: Cryptanalyses of Branching Program Obfuscations over GGH13 Multilinear Map from the NTRU Problem
-        date: 2019-02-01
-        summary: The 6th Functional Encryption Workshop, Jeju, Korea
+      - label: Feb 2019
+        details: "Cryptanalyses of Branching Program Obfuscations over GGH13 Multilinear Map from the NTRU Problem — The 6th Functional Encryption Workshop, Jeju, Korea"
 
-      - title: Cryptanalysis on the HHSS Obfuscation Arising from Absence of Safeguards
-        date: 2018-10-01
-        summary: The 5th Functional Encryption Workshop, Jeju, Korea
+      - label: Oct 2018
+        details: "Cryptanalysis on the HHSS Obfuscation Arising from Absence of Safeguards — The 5th Functional Encryption Workshop, Jeju, Korea"
 
-      - title: A Refinement Frobenius Representation Algorithm for Solving Discrete Logarithm Problem over a Finite Field
-        date: 2017-05-01
-        summary: KMS Spring Meeting 2017, Gwangju, Korea
+      - label: May 2017
+        details: "A Refinement Frobenius Representation Algorithm for Solving Discrete Logarithm Problem over a Finite Field — KMS Spring Meeting 2017, Gwangju, Korea"
