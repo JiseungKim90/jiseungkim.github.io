@@ -1,4 +1,6 @@
 nbconvert
 pyyaml
-rendercv[full]
 scholarly
+# scholarly reads bibtexparser.bibdatabase, which 2.x removed, and scholarly
+# does not cap the version itself.
+bibtexparser<2
