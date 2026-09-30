@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-21'
+  last_updated: '2026-09-30'
 papers:
   _-ziFRMAAAAJ:0EnyYjriUFMC:
     citations: 4
@@ -14,7 +14,7 @@ papers:
     title: Security Analysis on TiGER KEM in KpqC Round 1 Competition Using Meet-LWE Attack
     year: '2023'
   _-ziFRMAAAAJ:9yKSN-GCB0IC:
-    citations: 21
+    citations: 22
     title: 'A polynomial time algorithm for breaking NTRU encryption with multiple keys: J. Kim, C. Lee'
     year: '2023'
   _-ziFRMAAAAJ:LkGwnXOMwfcC:
@@ -50,7 +50,7 @@ papers:
     title: Mathematical Analysis of the Indistinguishability Obfuscations
     year: '2020'
   _-ziFRMAAAAJ:_FxGoFyzp5QC:
-    citations: 26
+    citations: 30
     title: 'Adventures in crypto dark matter: Attacks and fixes for weak pseudorandom functions'
     year: '2021'
   _-ziFRMAAAAJ:eQOLeE2rZwMC:
@@ -58,7 +58,7 @@ papers:
     title: Algorithms for CRT-variant of approximate greatest common divisor problem
     year: '2020'
   _-ziFRMAAAAJ:hqOjcs7Dif8C:
-    citations: 30
+    citations: 32
     title: Improved universal thresholdizer from iterative shamir secret sharing
     year: '2025'
   _-ziFRMAAAAJ:kNdYIx-mwKoC:
