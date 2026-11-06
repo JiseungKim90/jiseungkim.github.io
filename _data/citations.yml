@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-10-21'
+  last_updated: '2026-11-06'
 papers:
   _-ziFRMAAAAJ:0EnyYjriUFMC:
     citations: 6
@@ -18,7 +18,7 @@ papers:
     title: 'A polynomial time algorithm for breaking NTRU encryption with multiple keys: J. Kim, C. Lee'
     year: '2023'
   _-ziFRMAAAAJ:LkGwnXOMwfcC:
-    citations: 4
+    citations: 5
     title: 'Reduce and Prange: Revisiting Prange''s Information Set Decoding for LPN and RSD.'
     year: '2024'
   _-ziFRMAAAAJ:MXK_kJrjxJIC:
@@ -50,7 +50,7 @@ papers:
     title: Mathematical Analysis of the Indistinguishability Obfuscations
     year: '2020'
   _-ziFRMAAAAJ:_FxGoFyzp5QC:
-    citations: 30
+    citations: 31
     title: 'Adventures in crypto dark matter: Attacks and fixes for weak pseudorandom functions'
     year: '2021'
   _-ziFRMAAAAJ:eQOLeE2rZwMC:
@@ -66,7 +66,7 @@ papers:
     title: Worst-case Analysis of Lattice Enumeration Algorithm over Modules
     year: '2025'
   _-ziFRMAAAAJ:qjMakFHDy7sC:
-    citations: 5
+    citations: 6
     title: Amortized efficient zk-SNARK from linear-only RLWE encodings
     year: '2023'
   _-ziFRMAAAAJ:roLk4NBRz8UC:
